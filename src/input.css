@@ -6,17 +6,18 @@
 
     --color-accent:#8bc035;
 
-    --color-text:#011f20;
-    --color-text-muted:#718096;
+    --color-text:#013026;
+    --color-text-muted:#2c8571;
 
     --color-bg:#fff;
-    --color-bg-alt:  #aadbdd;
+    --color-bg-alt:  #eefbfc;
+    --color-alt-2: #caecee;
 
 
 }
 
 @layer components{
     .btn{
-        @apply bg-primary p-5 rounded-md;
+        @apply bg-primary p-5 rounded-md text-bg text-2xl font-bold;
     }
 }
