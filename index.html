@@ -52,35 +52,160 @@
         </section>
 
         <!-- Benefits Section -->
-        <section class="bg-alt-2">
-            <div>
-                <div>
-                    <h1>Expertise</h1>
-                    <p>
+        <section class="bg-alt-2 p-16">
+            <div class="grid grid-cols-4 divide-x divide-bg gap-16 p-2">
+                <div class="div-hero">
+                    <i data-lucide="Brain" class="div-hero-ico"></i>
+                    <h1 class="div-hero-title">Expertise</h1>
+                    <p class="div-hero-body">
                         Des experts devoues a vos cotes pour resoudre tous vos problematiques.
                     </p>
                 </div>
-                <div>
-                    <h1>Completude</h1>
-                    <p>
+                <div class="div-hero">
+                    <i data-lucide="Puzzle" class="div-hero-ico"></i>
+                    <h1 class="div-hero-title">Completude</h1>
+                    <p class="div-hero-body">
                         Une gamme exceptionnelle de produits et de services pour satisfaire tous vos besoins.
                     </p>
                 </div>
-                <div>
-                    <h1>Simplicite</h1>
-                    <p>
+                <div class="div-hero">
+                    <i data-lucide="HandHeart" class="div-hero-ico"></i>
+                    <h1 class="div-hero-title">Simplicite</h1>
+                    <p class="div-hero-body">
                         Une plateforme d'achats ultra-simple et disponible a tout moment.
                     </p>
                 </div>
-                <div>
-                    <h1>Efficacite</h1>
-                    <p>
+                <div class="div-hero">
+                    <i data-lucide="CircleCheckBig" class="div-hero-ico"></i>
+                    <h1 class="div-hero-title">Efficacite</h1>
+                    <p class="div-hero-body">
                         Reapprovisionnez-vous en un clin d'oeilet gagnez un temps precieux
                     </p>
                 </div>
 
             </div>
         </section>
+
+
+        <!-- ANSWERS TO NEEDS section -->
+         <section class="p-16 flex flex-col items-center">
+            <div class="text-center p-8">
+                <h1 class="text-5xl text-text font-bold p-8">Des réponses concrètes à vos besoins</h1>
+                <p class="text-text text-xl">
+                    3 solutions en 1 pour répondre à tous vos besoins au quotidien dans la gestion de votre exploitation agricole.
+                </p>
+            </div>
+            <div class="grid grid-cols-3 p-8">
+                <div class="needs-cards">
+                    <img src="./assets/img/Agropilote_2.svg">
+                    <h1 class="needs-cards-title">Agro Pilot</h1>
+                    <p class="needs-cards-contain">L'outil conçu pour optimiser vos performances agricoles avec une gestion précise et simplifiée.</p>
+                    <button class="btn-second ">Decouvrir  <i data-lucide="ArrowRight"></i></button>
+                </div>                
+                <div class="needs-cards">
+                    <img src="./assets/img/Collecte_1.svg">
+                    <h1 class="needs-cards-title">Collecte</h1>
+                    <p class="needs-cards-contain">Des solutions conçues pour vous accompagner dans la valorisation de vos productions.</p>
+                    <button class="btn-second ">Decouvrir  <i data-lucide="ArrowRight"></i></button>
+                </div>                
+                <div class="needs-cards">
+                    <img src="./assets/img/Appro_3.svg">
+                    <h1 class="needs-cards-title">Appro</h1>
+                    <p class="needs-cards-contain">Une gamme complète de produits et services dédiés aux professionnels de l'agriculture. </p>
+                    <button class="btn-second">Decouvrir  <i data-lucide="ArrowRight"></i></button>
+                </div> 
+            </div>
+            <button class="btn  ">Creer mon compte gratuitement</button>               
+         </section>
+
+         <!-- APP MOBILE SECTION -->
+          <section class="bg-primary p-8">
+            <div class="grid grid-cols-2 gap-4 items-center">
+                <div class="w-5/6">
+                    <img src="./assets/img/App_-_mobile_-2.png">
+                </div>
+                
+                <div class="">
+                    <div>
+                        <h1 class="text-6xl text-white font-bold my-18">Farmi vous simplifie l'agri</h1>
+                        <p class="text-white text-xl my-8">Un écosystème tout en un !</p>
+                    </div>
+                    <!-- Conteneur principal en Flex Colonne -->
+                    <div class="flex flex-col">
+
+                        <!-- ÉTAPE 1 (Active / Complétée) -->
+                        <div class="flex gap-16">
+                            <!-- Colonne de gauche : Le rond et la ligne -->
+                            <div class="flex flex-col items-center">
+                                <!-- Rond connecté/actif -->
+                                <div class="step-type">
+                                1
+                                </div>
+                                <!-- Ligne verticale vers l'étape suivante -->
+                                <div class="w-0.5 h-32 bg-accent"></div>
+                            </div>
+                            <!-- Contenu de l'étape -->
+                            <div class="pt-1">
+                                <h3 class="font-bold text-bg text-4xl">Téléchargez gratuitement l’application Farmi</h3>
+                                <div class="text-white flex gap-8 my-8">
+                                    <button class="flex flex-row w-60 items-center  bg-black border border-bg rounded-xl">
+                                        <i data-lucide="Play" class="w-20 h-20"></i> 
+                                        <p>DISPONIBLE SUR <span class="text-2xl font-semibold">Google Play</span>
+                                        </p>
+                                    </button>
+                                    <button class="flex flex-row w-60 items-center  bg-black border border-bg rounded-xl">
+                                        <i data-lucide="Apple" class="w-20 h-20"></i> 
+                                        <p>Telecharger dans <span class="text-2xl font-semibold">l'App Store</span>
+                                        </p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ÉTAPE 2 (En cours) -->
+                        <div class="flex gap-16">
+                            <div class="flex flex-col items-center">
+                                <!-- Rond en cours (bordure bleue, fond blanc) -->
+                                <div class="step-type">
+                                2
+                                </div>
+                                <!-- Ligne verticale neutre (pas encore franchie) -->
+                                <div class="w-0.5 h-150 bg-accent"></div>
+                            </div>
+                            <div class="pt-1">
+                                <h3 class="font-bold text-bg text-4xl">Créez votre compte client</h3>
+                                <p class="text-2xl text-bg leading-16">
+                                    J’accède au formulaire de création de compte client et remplis les champs demandés <br>
+                                    Je reçois un email de confirmation<br>
+                                    Je confirme la création de mon compte sur l’email réceptionné<br>
+                                    Je reviens sur Farmi et me connecte avec l’email et le mot de passe renseignés lors de mon inscription<br>
+                                    Je renseigne mon code client Soufflet Agriculture<br>
+                                    Je reçois un email de confirmation<br>
+                                    Je confirme l’ajout de mon exploitation sur l’email réceptionné<br>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- ÉTAPE 3 (Inactive / À venir) -->
+                        <div class="flex gap-16">
+                        <div class="flex flex-col items-center">
+                            <!-- Rond neutre/gris -->
+                            <div class="step-type">
+                            3
+                            </div>
+                            <!-- Pas de ligne après le dernier élément -->
+                        </div>
+                        <div class="pt-1">
+                            <h3 class="font-bold text-bg text-4xl mb-8">Profitez de tous les outils Farmi</h3>
+                            <p class="text-2xl text-bg leading-10">Trouver au même endroit, avec votre ordinateur ou votre téléphone, tous les produits et services nécessaires pour votre exploitation 24h/24, 7j/7.</p>
+                        </div>
+                        </div>
+
+                    </div>
+                    </div>
+
+            </div>
+          </section>
     </main>
     <script>
         lucide.createIcons();
