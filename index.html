@@ -8,7 +8,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <header class="fixed w-1/1 bg-gradient-to-r from-primary to-secondary flex flex-row h-28 text-bg font-bold text-2xl shadow-lg gap-20 items-center">
+    <header class="fixed w-1/1 z-50 bg-gradient-to-r from-primary to-secondary flex flex-row h-28 text-bg font-bold text-2xl shadow-lg gap-20 items-center">
         <div>
             <img src="./assets/img/logo.svg" alt="Logo" class="w-50">
             
@@ -22,8 +22,8 @@
             </ul>
         </nav>
         <div class="flex bg-bg text-text rounded-4xl p-4 w-180">
-            <input class="text-primary" type="text" placeholder="Rechercher...">
-            <div class="ml-auto"><i data-lucide="Search" class="text-secondary w-7 h-7"></i></div>
+            <input class="" type="text" placeholder="Rechercher...">
+            <div class="ml-auto"><i data-lucide="Search" class="text-text w-8 h-8"></i></div>
         </div>
         <div>
             <button class="btn flex gap-4">
@@ -290,14 +290,132 @@
         </section>
 
         <!-- PICTURES -->
-        <section class="bg-secondary ">
+        <section class="bg-alt-2 ">
             <div class="flex gap-8 py-8 justify-center">
                 <img src="./assets/img/gridimage1_1.jpg" class="h-100">
                 <img src="./assets/img/Gridimage2.jpg" class="h-100">
                 <img src="./assets/img/Gridimage3_1.jpg" class="h-100">
             </div>
         </section>
+
+        <!-- TESTIMONIALS -->
+         <section>
+            <div class="">
+                <h1 class="text-text text-5xl font-bold text-center py-24">
+                    Qui de mieux que vous pour parler de nous ?
+                </h1>
+                <div class="grid grid-cols-2 gap-8 mx-64 items-center justify-center">
+                    <div class="testimonial-type">
+                        <div class="testimonial-type-msg">
+                            "Depuis un an, j'utilise Farmi pour differentes taches, comme la meteo ou encore la vente des
+                            cereales. Depuis mon smartphone, je pilote de plus en plus de taches par moi-meme. Un gain de temps
+                            qui ameliore aussi marelation avec mon agent relation cultures. "
+                        </div> 
+                        <div class="testimonial-type-autor">
+                            - Julien ,cerealier(76)
+                        </div>   
+                    </div>
+                    <div class="testimonial-type">
+                        <div class="testimonial-type-msg">
+                            "J'utilise Farmi depuis pres de 2 ans. Cela me permet de consulter les cours en temps reel
+                            et de saisir les meilleures opportunites. "
+                        </div> 
+                        <div class="testimonial-type-autor">
+                            - Jean-Jacques ,cerealier(27)
+                        </div>   
+                    </div>
+                </div>
+            </div>
+         </section>
+
+        <section class="my-32">
+            <div class="grid grid-cols-4 p-8 gap-4">
+                <img src="./assets/img/Gridimage4.jpg" class="h-120">
+                <img src="./assets/img/Gridimage5.jpg" class="h-120">
+                <img src="./assets/img/Gridimage6.jpg" class="col-span-2 h-120">
+            </div>
+        </section>
+
+        <!-- HURRY UP -->
+        <section class="">
+            <div class="flex items-center gap-20 p-28">
+                <div class="w-5/6 rounded-4xl overflow-hidden"> 
+                    <img src="./assets/img/Newsletter.svg" alt="Newsletter" class="object-cover w-full h-full">
+                </div>
+                <div class="text-text flex flex-col gap-14">
+                    <h1 class="text-5xl font-bold text-text leading-relaxed">N'en perdez pas une miette !</span></h1>
+
+                    <p class="text-2xl leading-relaxed">
+                        Abonnez-vous à notre newsletter pour rester informé des nouveautés Farmi et des 
+                        solutions que nous vous apportons pour votre exploitation.
+                    </p>
+                    <button class="btn text-bg w-fit">Rejoindre la communaute Farmi</button>
+                </div>
+            </div>        
+        </section>
     </main>
+    <footer class="bg-primary">
+        <div class="flex py-32 gap-32 justify-center">
+            <div class="flex flex-col gap-8">
+                <img src="./assets/img/logo.svg" class="w-64 h-48">
+                <div class="flex gap-2">
+                    <div class="step-type bg-alt-2 text-text">
+                        1
+                    </div>
+                    <div class="step-type bg-alt-2 text-text">
+                        2
+                    </div>
+                    <div class="step-type bg-alt-2 text-text">
+                        3
+                    </div>
+                    <div class="step-type bg-alt-2 text-text">
+                        4
+                    </div>
+                </div>
+                <div class="flex gap-4 text-white">
+                    <button class="flex flex-row w-60 items-center  bg-black border border-bg rounded-xl">
+                        <i data-lucide="Play" class="w-20 h-20"></i> 
+                        <p>DISPONIBLE SUR <span class="text-2xl font-semibold">Google Play</span>
+                        </p>
+                    </button>
+                    <button class="flex flex-row w-60 items-center  bg-black border border-bg rounded-xl">
+                        <i data-lucide="Apple" class="w-20 h-20"></i> 
+                        <p>Telecharger dans <span class="text-2xl font-semibold">l'App Store</span>
+                        </p>
+                    </button>
+                </div>
+                <div class="text-white text-2xl">
+                    <p>© farmi 2026</p>
+                    <p>Tous droits réservés</p>
+                </div>
+
+            </div>
+            <div class="text-white text-2xl">
+                <h1 class="text-3xl font-bold uppercase">Mieux nous connaître</h1>
+                <ul class="py-8">
+                    <li class="py-4">A propos de Farmi</li>
+                    <li class="py-4">Actualites agricoles</li>
+                </ul>
+            </div>
+            <div class="text-white text-2xl">
+                <h1 class="text-2xl font-bold uppercase">Nos services</h1>
+                <ul class="py-8">
+                    <li class="py-4">Foire aux questions</li>
+                    <li class="py-4">Blog Farmi</li>
+                    <li class="py-4">Acces espace client</li>
+                </ul>
+            </div>
+            <div class="text-white text-2xl">
+                <h1 class="text-3xl font-bold uppercase">Besoin d'une information ?</h1>
+                <ul class="py-8">
+                    <li class="py-4">Ecophyto</li>
+                    <li class="py-4">Nous contacter</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+
     <script>
         lucide.createIcons();
     </script>

@@ -48,4 +48,15 @@
     .step-type{
         @apply rounded-full bg-accent w-18 h-18 pt-4 text-center text-4xl text-bg-alt font-extrabold;
     }
+
+    .testimonial-type{
+        @apply rounded-4xl border-1 border-alt-2 p-12 h-120 ;
+    }
+    .testimonial-type-msg{
+        @apply text-2xl text-text italic leading-relaxed;
+    }
+    .testimonial-type-autor{
+        @apply text-2xl text-text font-bold leading-relaxed mt-12;
+    }
+
 }
