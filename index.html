@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/output.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <header class="bg-gradient-to-r from-primary to-secondary flex flex-row h-28 text-bg font-bold text-2xl shadow-lg gap-20 items-center">
+        <div>
+            <img src="./assets/img/logo.svg" alt="Logo" class="w-50">
+            
+        </div>
+        <nav class="">
+            <ul class="flex gap-12">
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Appro</a></li>
+                <li><a href="#">Collecte</a></li>
+                <li><a href="#">Agro Pilot</a></li>
+            </ul>
+        </nav>
+        <div class="flex bg-bg text-text rounded-4xl p-4 w-180">
+            <input class="text-primary" type="text" placeholder="Rechercher...">
+            <div class="ml-auto"><i data-lucide="Search" class="text-secondary w-7 h-7"></i></div>
+        </div>
+        <div>
+            <button class="btn flex gap-4">
+                <i data-lucide="CircleUserRound" class="w-8 h-8"></i> S'identifier
+            </button>
+        </div>
+    </header>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+</html>

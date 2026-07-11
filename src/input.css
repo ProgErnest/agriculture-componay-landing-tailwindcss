@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme{
+    --color-primary:#088b75;
+    --color-secondary:#00b377;
+
+    --color-accent:#8bc035;
+
+    --color-text:#011f20;
+    --color-text-muted:#718096;
+
+    --color-bg:#fff;
+    --color-bg-alt:  #aadbdd;
+
+
+}
+
+@layer components{
+    .btn{
+        @apply bg-primary p-5 rounded-md;
+    }
+}
