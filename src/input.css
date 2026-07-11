@@ -17,8 +17,11 @@
 }
 
 @layer components{
+.container{
+        @apply mx-auto px-8 max-w-5xl;
+    }
     .btn{
-        @apply bg-primary p-5 rounded-md text-bg text-2xl font-bold w-fit;
+        @apply bg-primary p-4 rounded-md text-bg text-xl font-bold w-fit;
     }
     .div-hero{
         @apply flex flex-col gap-8 pr-4 text-2xl leading-relaxed;
@@ -43,20 +46,20 @@
         @apply text-2xl text-center text-text leading-relaxed;
     }
     .btn-second{
-        @apply flex gap-4 text-text-muted font-black text-2xl contain-content underline underline-offset-8  w-fit leading-relaxed;
+        @apply flex gap-4 text-text-muted font-black text-xl contain-content underline underline-offset-8  w-fit leading-relaxed;
     }
     .step-type{
-        @apply rounded-full bg-accent w-18 h-18 pt-4 text-center text-4xl text-bg-alt font-extrabold;
+        @apply rounded-full bg-accent w-14 h-14 pt-2 text-center text-4xl text-bg-alt font-extrabold;
     }
 
     .testimonial-type{
-        @apply rounded-4xl border-1 border-alt-2 p-12 h-120 ;
+        @apply rounded-4xl border-1 border-alt-2 p-6 h-60 ;
     }
     .testimonial-type-msg{
-        @apply text-2xl text-text italic leading-relaxed;
+        @apply text-lg text-text italic leading-relaxed;
     }
     .testimonial-type-autor{
-        @apply text-2xl text-text font-bold leading-relaxed mt-12;
+        @apply text-xl text-text font-bold leading-relaxed mt-8;
     }
 
 }
