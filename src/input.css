@@ -1,94 +1,93 @@
+/* ============================================================
+   AGRIFLOW — INPUT.CSS (Tailwind CSS v4, CSS-first)
+   Build : npx @tailwindcss/cli -i ./input.css -o ./dist/output.css --watch
+   ============================================================ */
+
 @import "tailwindcss";
 
-@theme{
-    --color-primary:#088b75;
-    --color-secondary:#00b377;
+@theme {
+  /* ---------- Couleurs — nommage cohérent, rôle explicite ---------- */
+  --color-primary: #088B75;
+  --color-primary-dark: #066b59;      /* hover states */
+  --color-secondary: #00B377;
+  --color-accent: #8BC035;
+  --color-accent-dark: #729c2b;
 
-    --color-accent:#8bc035;
+  --color-text: #002221;
+  --color-text-muted: #2C8571;
 
-    --color-text:#002221;
-    --color-text-muted:#2c8571;
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #EEFBFC;
+  --color-bg-alt-2: #CEE7DB;          /* renommé depuis --color-alt-2 */
 
-    --color-bg:#fff;
-    --color-bg-alt:  #eefbfc;
-    --color-alt-2: #cee7db;
+  --color-on-primary: #FFFFFF;        /* remplace l'ancien "text-bg" ambigu */
 
-
+  /* ---------- Ombres — absentes de la v1, nécessaires pour la profondeur ---------- */
+  --shadow-card: 0 2px 12px rgba(0, 34, 33, 0.08);
+  --shadow-card-hover: 0 12px 28px rgba(0, 34, 33, 0.14);
+  --shadow-header: 0 2px 16px rgba(0, 34, 33, 0.10);
 }
 
-@layer components{
-.container{
-        @apply mx-auto px-8 max-w-6xl;
-    }
-    .btn{
-        @apply bg-primary p-4 rounded-md text-bg text-xl font-bold w-fit;
-    }
-    .div-hero{
-        @apply flex flex-col gap-8 pr-4 text-2xl leading-relaxed items-center;
-    }
-    .div-hero-ico{
-        @apply w-12 h-12 bg-bg text-text p-2 ;
-    }
-    .div-hero-title{
-        @apply font-bold text-text text-2xl;
-    }
-    .div-hero-body{
-        @apply text-text text-lg leading-10 text-center;
-    }
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-    .needs-cards{
-        @apply rounded-2xl border-text-muted border-1 p-8 flex flex-col items-center gap-12 w-8/9;
-    }
-    .needs-cards-title{
-        @apply text-text text-2xl font-bold text-center;
-    }
-    .needs-cards-contain{
-        @apply text-lg text-center text-text leading-relaxed;
-    }
-    .btn-second{
-        @apply flex gap-4 text-text-muted font-black text-xl contain-content underline underline-offset-8  w-fit leading-relaxed;
-    }
-    .step-type{
-        @apply rounded-full bg-accent w-14 h-14 pt-2 text-center text-4xl text-bg-alt font-extrabold;
-    }
+  body {
+    color: var(--color-text);
+    background-color: var(--color-bg);
+  }
+}
 
-    .testimonial-type{
-        @apply rounded-4xl border-1 border-alt-2 p-6 h-60 ;
-    }
-    .testimonial-type-msg{
-        @apply text-lg text-text italic leading-relaxed;
-    }
-    .testimonial-type-autor{
-        @apply text-xl text-text font-bold leading-relaxed mt-8;
-    }
+@layer components {
+  /* Renommé "wrapper" — évite d'écraser la classe .container native de Tailwind */
+  .wrapper {
+    @apply mx-auto px-6 max-w-320;
+  }
 
-    .cat-widget{
-        @apply text-xl text-primary font-bold rounded-full border border-alt-2 bg-white p-4 
-    }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-on-primary
+           px-6 py-3 rounded-lg text-lg font-bold w-fit transition-colors duration-200
+           shadow-card hover:shadow-card-hover hover:cursor-pointer; 
+  }
 
-    .actuality-card{
-        @apply flex flex-col gap-2 bg-white rounded-lg border border-alt-2 overflow-hidden relative h-150; 
-    }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 text-primary font-bold text-lg
+           underline underline-offset-4 decoration-2 w-fit
+           hover:text-primary-dark transition-colors duration-200 cursor-pointer;
+  }
 
-    .actuality-pict{
-        @apply h-72 object-cover;
-    }
-    .actuality-cat{
-        @apply uppercase text-primary text-lg font-bold p-4;
-    }
-    .actuality-title{
-        @apply text-text text-xl font-bold px-4 pt-4;
-    }
-    .actuality-body{
-        @apply text-text text-xl  px-4;
-    }
-    .actuality-footer{
-        @apply flex gap-20 text-text text-lg font-bold  ;
-    }
-    .actuality-btn{
-        @apply absolute bottom-4 right-4;
-    }
-    .actuality-date{
-        @apply absolute bottom-4 left-4;
-    }
+  .benefit-card {
+    @apply flex flex-col items-center gap-4 text-center;
+  }
+
+  .benefit-card__icon {
+    @apply w-14 h-14 flex items-center justify-center rounded-full
+           bg-bg-alt text-primary text-2xl;
+  }
+
+  .need-card {
+    @apply rounded-2xl border border-bg-alt-2 bg-white p-8 flex flex-col items-center
+           gap-6 text-center shadow-card hover:shadow-card-hover transition-shadow duration-200;
+  }
+
+  .testimonial-card {
+    @apply rounded-3xl border border-bg-alt-2 bg-white p-8 shadow-card
+           flex flex-col gap-6 h-full;
+  }
+
+  .step-badge {
+    @apply rounded-full bg-accent w-12 h-12 flex items-center justify-center
+           text-2xl text-on-primary font-extrabold flex-shrink-0;
+  }
+
+  .category-pill {
+    @apply text-base text-primary font-bold rounded-full border border-bg-alt-2
+           bg-white px-5 py-2.5 hover:bg-bg-alt transition-colors duration-200;
+  }
+
+  .article-card {
+    @apply flex flex-col bg-white rounded-2xl border border-bg-alt-2 overflow-hidden
+           shadow-card hover:shadow-card-hover transition-shadow duration-200 h-full;
+  }
 }

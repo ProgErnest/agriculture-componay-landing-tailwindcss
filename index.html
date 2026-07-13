@@ -5,96 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./src/output.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body class="">
-    <header class="fixed w-1/1 z-50 shadow-lg ">
+    <!---------------------HEADER--------------------------  -->
+    <header class="fixed top-0 w-full z-50 shadow-header bg-white ">
         <!-- NAVBAR 1 -->
         <div class="bg-gradient-to-r from-primary to-secondary ">
-            <div class="container flex flex-row h-24  text-white gap-16 items-center text-xl">
-                <div>
-                    <img src="./assets/img/logo.svg" alt="Logo" class="w-50">
+            <div class="wrapper flex flex-wrap h-20  text-white py-4 gap-6 items-center">
+                <a href="/" class="shrink-0"><img src="./assets/img/logo.svg" alt="Logo" loading="lazy" class="w-32 h-12"></a>
                     
-                </div>
-                <nav class="">
-                    <ul class="flex gap-12">
-                        <li><a href="#">Accueil</a></li>
-                        <li><a href="#">Appro</a></li>
-                        <li><a href="#">Collecte</a></li>
-                        <li><a href="#">Agro Pilot</a></li>
+                <nav class="hidden lg:flex">
+                    <ul class="flex gap-8 text-base font-bold">
+                        <li><a href="#accueil" class="hover:text-accent transition-colors">Accueil</a></li>
+                        <li><a href="#appro" class="hover:text-accent transition-colors">Appro</a></li>
+                        <li><a href="#collecte" class="hover:text-accent transition-colors">Collecte</a></li>
+                        <li><a href="#pilot" class="hover:text-accent transition-colors">Agro Pilot</a></li>
                     </ul>
                 </nav>
-                <div class="flex bg-bg text-text rounded-4xl p-4 max-w-200">
-                    <input class="" type="text" placeholder="Rechercher...">
-                    <div class="ml-auto"><i data-lucide="Search" class="text-text w-8 h-8"></i></div>
+
+                <div class="hidden md:flex bg-white text-text rounded-full px-4 py-2 flex-1 max-w-sm items-center gap-2 ml-auto">
+                    <label for="search" class="sr-only">Rechercher</label>
+                    <input id="search" type="text" class="flex-1 outline-none text-sm" type="text" placeholder="Rechercher...">
+                    <i class="ph ph-magnifying-glass text-lg"></i>
                 </div>
-                <div>
-                    <button class="btn flex gap-3">
-                        <i data-lucide="CircleUserRound" class="w-8 h-8"></i> S'identifier
-                    </button>
-                </div>
+
+                <button class="btn-primary text-base py-2.5 px-5">
+                    <i class="ph ph-user-circle text-xl"></i> S'identifier
+                </button>
+
+                <button class="lg:hidden text-2xl" aria-label="Ouvrir le menu" aria-expanded="false" id="nav-toggle">
+                    <i class="ph ph-list"></i>
+                </button>
             </div>
         </div>
-        <div class=" bg-white items-center text-text  text-lg">
-            <nav class="container">
-                <ul class="h-24 flex gap-20 items-center">
-                    <li class="p-4 border border-alt-2 rounded-xl"><a href="#" class="flex items-center gap-2"><i data-lucide="List"></i>Explorer catalogue</a></li>
-                    <li><a href="#">Variete du moment </a></li>
-                    <li><a href="#">Smag Farmer by Soufflet Agriculture</a></li>
-                    <li><a href="#">Actualites Agricoles</a></li>
-                    <li><a href="#">Synthese 7eme directive nitrates</a></li>
+
+        <div class=" hidden lg:block bg-white text-text text-base ">
+            <nav class="wrapper" aria-label="Navigation secondaire">
+                <ul class="flex flex-wrap gap-12 py-4 items-center">
+                    <li class="px-4 py-2 border border-bg-alt-2 rounded-xl hover:bg-bg-alt transition-colors">
+                        <a href="#" class="flex items-center gap-2"><i class="ph ph-list-bullets"></i>Explorer catalogue</a>
+                    </li>
+                    <li><a href="#" class="hover:text-primary transition-colors">Variete du moment </a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors">Smag Farmer by Soufflet Agriculture</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors">Actualites Agricoles</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors">Synthese 7eme directive nitrates</a></li>
                 </ul>
             </nav>
         </div>
+
+        <!-- Menu mobile -->
+        <nav id="mobile-nav" class="lg:hidden hidden bg-white border-t border-bg-alt-2" aria-label="Navigation mobile">
+            <ul class="flex flex-col text-text">
+                <li><a href="#accueil" class="block px-6 py-4 border-b border-bg-alt-2">Accueil</a></li>
+                <li><a href="#appro" class="block px-6 py-4 border-b border-bg-alt-2">Appro</a></li>
+                <li><a href="#collecte" class="block px-6 py-4 border-b border-bg-alt-2">Collecte</a></li>
+                <li><a href="#pilot" class="block px-6 py-4">Agro Pilot</a></li>
+            </ul>
+        </nav>
+
     </header>
 
     <!-- Hero Section -->
-    <main class="pt-32">
-        <section class="bg-bg-alt  ">
-            <div class="flex items-center gap-20 py-32 container">
-                <div class="w-5/6 rounded-4xl overflow-hidden"> 
-                    <img src="./assets/img/ARC_AGRI_Champ_BleÌ_18.jpg" alt="Image significative" class="object-cover w-full h-full">
+    <main class="pt-28 lg:pt-32">
+        <section id="accueil" class="bg-bg-alt  ">
+            <div class="wrapper flex flex-col lg:flex-row-reverse items-center gap-12 py-16 lg:py-24">
+                <div class="w-full lg:w-1/2 rounded-3xl overflow-hidden shadow-card-hover"> 
+                    <img src="./assets/img/ARC_AGRI_Champ_BleÌ_18.jpg" alt="Image significative" loading="lazy" class="object-cover w-full h-full aspect-[4/3]">
                 </div>
-                <div class="text-text flex flex-col gap-14">
-                    <h1 class="text-4xl font-bold text-text leading-relaxed">Toute l’expertise de Soufflet Agriculture est dans <span>l’écosystème Farmi</span></h1>
-
-                    <p class="text-2xl leading-relaxed">Complet, intuitif et rapide, l’écosystème Farmi vous offre au quotidien 
+                <div class="w-full lg:w-1/2 flex flex-col gap-6">
+                    <h1 class="text-3xl md:text-4xl font-bold leading-tight">
+                        Toute l’expertise de Soufflet Agriculture est dans <span class="text-primary">l’écosystème Farmi</span>
+                    </h1>
+                    <p class="text-lg md:text-xl leading-relaxed text-text-muted">Complet, intuitif et rapide, l’écosystème Farmi vous offre au quotidien 
                         toutes les solutions qui vous font gagner en temps et en performance pour 
                         gérer votre exploitation.
                     </p>
-                    <button class="btn text-bg w-fit">Je cree un compte gratuitement</button>
+                    <button class="btn-primary">Je cree un compte gratuitement</button>
                 </div>
             </div>        
         </section>
 
-        <!-- Benefits Section -->
-        <section class="bg-alt-2 p-16">
-            <div class="grid grid-cols-4 divide-x divide-bg gap-16 p-2 container">
-                <div class="div-hero">
-                    <i data-lucide="Brain" class="div-hero-ico"></i>
-                    <h1 class="div-hero-title">Expertise</h1>
-                    <p class="div-hero-body">
+        <!---------------------BENEFITS-------------------- -->
+        <section class="bg-bg-alt-2 py-16 lg:py-20">
+            <div class="wrapper grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:divide-x  lg:divide-white">
+                <div class="benefit-card lg:pr-8 first:pl-0">
+                    <div class="benefit-card__icon"><i class="ph ph-brain"></i></div>
+                    <h2 class="text-xl font-bold">Expertise</h2>
+                    <p class="text-text-muted">
                         Des experts devoues a vos cotes pour resoudre tous vos problematiques.
                     </p>
                 </div>
-                <div class="div-hero">
-                    <i data-lucide="Puzzle" class="div-hero-ico"></i>
-                    <h1 class="div-hero-title">Completude</h1>
-                    <p class="div-hero-body">
+                <div class="benefit-card lg:pr-8">
+                    <div class="benefit-card__icon"><i class="ph ph-puzzle-piece"></i></div>
+                    <h2 class="text-xl font-bold">Completude</h2>
+                    <p class="text-text-muted">
                         Une gamme exceptionnelle de produits et de services pour satisfaire tous vos besoins.
                     </p>
                 </div>
-                <div class="div-hero">
-                    <i data-lucide="HandHeart" class="div-hero-ico"></i>
-                    <h1 class="div-hero-title">Simplicite</h1>
-                    <p class="div-hero-body">
+                <div class="benefit-card lg:pr-8">
+                    <div class="benefit-card__icon"><i class="ph ph-hand-heart"></i></div>
+                    <h2 class="text-xl font-bold">Simplicite</h2>
+                    <p class="text-text-muted">
                         Une plateforme d'achats ultra-simple et disponible a tout moment.
                     </p>
                 </div>
-                <div class="div-hero">
-                    <i data-lucide="CircleCheckBig" class="div-hero-ico"></i>
-                    <h1 class="div-hero-title">Efficacite</h1>
-                    <p class="div-hero-body">
+                <div class="benefit-card lg:pr-8">
+                    <div class="benefit-card__icon"><i class="ph ph-check-circle"></i></div>
+                    <h2 class="text-xl font-bold">Efficacite</h2>
+                    <p class="text-text-muted">
                         Reapprovisionnez-vous en un clin d'oeilet gagnez un temps precieux
                     </p>
                 </div>
@@ -104,93 +123,94 @@
 
 
         <!-- ANSWERS TO NEEDS section -->
-         <section class="p-16 flex flex-col items-center container">
-            <div class="text-center p-8">
-                <h1 class="text-3xl text-text font-bold p-8">Des réponses concrètes à vos besoins</h1>
-                <p class="text-text text-lg">
-                    3 solutions en 1 pour répondre à tous vos besoins au quotidien dans la gestion de votre exploitation agricole.
-                </p>
+         <section class="py-16 lg:py-24">
+            <div class="wrapper flex flex-col items-center">
+                <div class="text-center max-w-2xl mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Des réponses concrètes à vos besoins</h2>
+                    <p class="text-lg text-text-muted">
+                        3 solutions en 1 pour répondre à tous vos besoins au quotidien dans la gestion de votre exploitation agricole.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full mb-10">
+                    <div id="pilot" class="need-card">
+                        <img src="./assets/img/Agropilote_2.svg" alt="agro pilote" loading="lazy">
+                        <h3 class="text-xl font-bold">Agro Pilot</h3>
+                        <p class="text-text-muted">L'outil conçu pour optimiser vos performances agricoles avec une gestion précise et simplifiée.</p>
+                        <button class="btn-outline">Decouvrir  <i class="ph ph-arrow-right"></i></button>
+                    </div>                
+                    <div id="collecte" class="need-card">
+                        <img src="./assets/img/Collecte_1.svg" alt="collecte-image" loading="lazy">
+                        <h3 class="text-xl font-bold">Collecte</h3>
+                        <p class="text-text-muted">Des solutions conçues pour vous accompagner dans la valorisation de vos productions.</p>
+                        <button class="btn-outline">Decouvrir  <i class="ph ph-arrow-right"></i></button>
+                    </div>                
+                    <div id="appro" class="need-card">
+                        <img src="./assets/img/Appro_3.svg" alt="Appro" loading="lazy">
+                        <h2 class="text-xl font-bold">Appro</h2>
+                        <p class="text-text-muted">Une gamme complète de produits et services dédiés aux professionnels de l'agriculture. </p>
+                        <button class="btn-outline">Decouvrir  <i class="ph ph-arrow-right"></i></button>
+                    </div> 
+                </div>
+                <button class="btn-primary">Creer mon compte gratuitement</button>               
             </div>
-            <div class="grid grid-cols-3 p-4">
-                <div class="needs-cards">
-                    <img src="./assets/img/Agropilote_2.svg">
-                    <h1 class="needs-cards-title">Agro Pilot</h1>
-                    <p class="needs-cards-contain">L'outil conçu pour optimiser vos performances agricoles avec une gestion précise et simplifiée.</p>
-                    <button class="btn-second ">Decouvrir  <i data-lucide="ArrowRight"></i></button>
-                </div>                
-                <div class="needs-cards">
-                    <img src="./assets/img/Collecte_1.svg">
-                    <h1 class="needs-cards-title">Collecte</h1>
-                    <p class="needs-cards-contain">Des solutions conçues pour vous accompagner dans la valorisation de vos productions.</p>
-                    <button class="btn-second ">Decouvrir  <i data-lucide="ArrowRight"></i></button>
-                </div>                
-                <div class="needs-cards">
-                    <img src="./assets/img/Appro_3.svg">
-                    <h1 class="needs-cards-title">Appro</h1>
-                    <p class="needs-cards-contain">Une gamme complète de produits et services dédiés aux professionnels de l'agriculture. </p>
-                    <button class="btn-second">Decouvrir  <i data-lucide="ArrowRight"></i></button>
-                </div> 
-            </div>
-            <button class="btn  ">Creer mon compte gratuitement</button>               
          </section>
 
          <!-- APP MOBILE SECTION -->
-          <section class="bg-primary py-8">
-            <div class="flex  gap-4 items-center container">
-                <div class="w-3/8">
-                    <img src="./assets/img/App_-_mobile_-2.png">
+          <section class="bg-primary py-16">
+            <div class="wrapper flex flex-col lg:flex-row gap-12 items-center">
+                <div class="w-full lg:w-2/5">
+                    <img src="./assets/img/App_-_mobile_-2.png" alt="farmi-mobile" loading="lazy" class="w-full">
                 </div>
                 
-                <div class="w-5/8">
+                <div class="w-full lg:w-3/5 text-white">
                     <div>
-                        <h1 class="text-4xl text-white font-bold my-12">Farmi vous simplifie l'agri</h1>
-                        <p class="text-white text-xl my-4">Un écosystème tout en un !</p>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Farmi vous simplifie l'agri</h2>
+                        <p class="text-lg md:text-xl mb-10 text-white/90">Un écosystème tout en un !</p>
                     </div>
                     <!-- Conteneur principal en Flex Colonne -->
-                    <div class="flex flex-col">
+                    <div class="flex flex-col gap-10">
 
                         <!-- ÉTAPE 1 (Active / Complétée) -->
-                        <div class="flex gap-12">
+                        <div class="flex gap-6">
                             <!-- Colonne de gauche : Le rond et la ligne -->
                             <div class="flex flex-col items-center">
                                 <!-- Rond connecté/actif -->
-                                <div class="step-type">
+                                <div class="step-badge">
                                 1
                                 </div>
                                 <!-- Ligne verticale vers l'étape suivante -->
-                                <div class="w-0.5 h-32 bg-accent"></div>
+                                <div class="w-0.5 flex-1 bg-accent mt-2"></div>
                             </div>
                             <!-- Contenu de l'étape -->
                             <div class="pt-1">
-                                <h3 class="font-bold text-bg text-3xl">Téléchargez gratuitement l’application Farmi</h3>
-                                <div class="text-white flex gap-4 my-8 text-md">
-                                    <button class="flex flex-row w-48 items-center  bg-black border border-bg rounded-sm">
-                                        <i data-lucide="Play" class="w-12 h-12"></i> 
-                                        <p class="text-sm">DISPONIBLE SUR <span class="text-xl font-semibold">Google Play</span>
-                                        </p>
-                                    </button>
-                                    <button class="flex flex-row w-48 items-center  bg-black border border-bg rounded-sm text-sm">
-                                        <i data-lucide="Apple" class="w-12 h-12"></i> 
-                                        <p>Telecharger dans <span class="text-xl font-semibold">l'App Store</span>
-                                        </p>
-                                    </button>
+                                <h3 class="font-bold text-xl mb-4">Téléchargez gratuitement l’application Farmi</h3>
+                                <div class="flex flex-wrap gap-3">
+                                    <a href="#" class="flex items-center gap-2 bg-black rounded-lg px-4 py-2 hover:bg-black/80 transition-colors">
+                                        <i class="ph ph-google-play-logo text-2xl"></i>
+                                        <span class="text-xs">DISPONIBLE SUR<br><strong class="text-base">Google Play</strong></span>
+                                    </a>
+                                    <a href="#" class="flex items-center gap-2 bg-black rounded-lg px-4 py-2 hover:bg-black/80 transition-colors">
+                                        <i class="ph ph-apple-logo text-2xl"></i>
+                                        <span class="text-xs">Télécharger dans<br><strong class="text-base">l'App Store</strong></span>
+                                    </a>
+
                                 </div>
                             </div>
                         </div>
 
                         <!-- ÉTAPE 2 (En cours) -->
-                        <div class="flex gap-16">
+                        <div class="flex gap-6">
                             <div class="flex flex-col items-center">
                                 <!-- Rond en cours (bordure bleue, fond blanc) -->
-                                <div class="step-type">
+                                <div class="step-badge">
                                 2
                                 </div>
                                 <!-- Ligne verticale neutre (pas encore franchie) -->
-                                <div class="w-0.5 h-100 bg-accent"></div>
+                                <div class="w-0.5 flex-1 bg-accent/40 mt-2"></div>
                             </div>
-                            <div class="pt-1">
-                                <h3 class="font-bold text-bg text-3xl">Créez votre compte client</h3>
-                                <p class="text-xl text-bg leading-10">
+                            <div>
+                                <h3 class="font-bold text-xl mb-2">Créez votre compte client</h3>
+                                <p class="text-white/80 leading-10">
                                     J’accède au formulaire de création de compte client et remplis les champs demandés <br>
                                     Je reçois un email de confirmation<br>
                                     Je confirme la création de mon compte sur l’email réceptionné<br>
@@ -203,76 +223,76 @@
                         </div>
 
                         <!-- ÉTAPE 3 (Inactive / À venir) -->
-                        <div class="flex gap-16">
+                        <div class="flex gap-6">
                         <div class="flex flex-col items-center">
                             <!-- Rond neutre/gris -->
-                            <div class="step-type">
+                            <div class="step-badge">
                             3
                             </div>
                             <!-- Pas de ligne après le dernier élément -->
                         </div>
-                        <div class="pt-1">
-                            <h3 class="font-bold text-bg text-3xl mb-8">Profitez de tous les outils Farmi</h3>
-                            <p class="text-xl text-bg leading-10">Trouver au même endroit, avec votre ordinateur ou votre téléphone, tous les produits et services nécessaires pour votre exploitation 24h/24, 7j/7.</p>
+                        <div>
+                            <h3 class="font-bold text-xl mb-2">Profitez de tous les outils Farmi</h3>
+                            <p class="text-white/80">Trouver au même endroit, avec votre ordinateur ou votre téléphone, tous les produits et services nécessaires pour votre exploitation 24h/24, 7j/7.</p>
                         </div>
-                        </div>
+                    </div>
 
-                    </div>
-                    </div>
+                </div>
+            </div>
 
             </div>
         </section>
 
         <!-- POSSIBILITIES -->
-        <section class="bg-bg-alt  ">
-            <div class="flex items-center gap-20 py-28 container">
-                <div class="w-5/6 rounded-2xl overflow-hidden"> 
-                    <img src="./assets/img/HP-section2colonnes.jpg" alt="Image significative" class="object-cover w-full h-full">
+        <section class="py-16 lg:py-24">
+            <div class="wrapper flex flex-col lg:flex-row items-center gap-12">
+                <div class="w-full lg:w-1/2 rounded-3xl overflow-hidden shadow-card-hover"> 
+                    <img src="./assets/img/HP-section2colonnes.jpg" alt="Image significative" loading="lazy" class="object-cover w-full h-full aspect-[4/3]">
                 </div>
-                <div class="w-8/9 text-text flex flex-col gap-14">
-                    <h1 class="text-3xl font-bold text-text leading-relaxed">Bienvenue sur Farmi, votre plateforme agricole tout-en-un !</span></h1>
-                    <h3 class="text-xl leading-relaxed font-bold">
+                <div class="w-full lg:w-1/2 flex flex-col gap-6">
+                    <h2 class="text-3xl font-bold leading-tight">Bienvenue sur Farmi, votre plateforme agricole tout-en-un !</span></h2>
+                    <h3 class="text-xl font-bold text-primary">
                         Farmi simplifie votre quotidien d’agriculteur en réunissant tous les outils essentiels en un seul endroit. 
                     </h3>
-                    <p class="text-lg leading-relaxed">
+                    <p class="text-lg leading-relaxed text-text-muted">
                         Que ce soit pour la gestion de vos exploitations, le suivi de vos cultures, l’accès à des 
                         services personnalisés ou encore pour échanger avec d’autres professionnels, Farmi est là 
                         pour vous accompagner à chaque étape. Avec une interface intuitive et des fonctionnalités 
                         innovantes, vous optimisez votre temps et prenez des décisions éclairées pour améliorer vos 
                         performances agricoles.
                     </p>
-                    <p class="text-lg leading-relaxed">
+                    <p class="text-lg leading-relaxed text-text-muted">
                         Rejoignez dès maintenant la communauté Farmi et découvrez une nouvelle façon de piloter votre activité agricole.
                     </p>
-                    <button class="btn text-bg w-fit">Je cree mon compte gratuitement</button>
+                    <button class="btn-primary">Je cree mon compte gratuitement</button>
                 </div>
             </div>        
         </section>
 
         <!-- STATS SECTION -->
          <section class="bg-primary">
-            <div class="flex flex-wrap place-content-center px-32 py-16 gap-32 container">
+            <div class="flex flex-wrap place-content-center px-32 py-16 gap-12 *: wrapper">
                 <div>
-                    <div class="text-white text-5xl font-bold text-center">
+                    <div class="text-white text-3xl font-bold text-center">
                         15795
                     </div>
-                    <div class="text-white text-xl text-center">
+                    <div class="text-white text-lg text-center">
                         Membres de la communaute Farmi
                     </div>
                 </div>
                 <div>
-                    <div class="text-white text-5xl font-bold text-center">
+                    <div class="text-white text-3xl font-bold text-center">
                         262 000 t
                     </div>
-                    <div class="text-white text-xl text-center">
+                    <div class="text-white text-lg text-center">
                        Contractualisées sur Farmi en 23-24
                     </div>
                 </div>
                 <div class="grid-">
-                    <div class="text-white text-5xl font-bold text-center">
+                    <div class="text-white text-3xl font-bold text-center">
                         1 128
                     </div>
-                    <div class="text-white text-xl text-center">
+                    <div class="text-white text-lg text-center">
                         Produits d'approvisionnement en ligne
                     </div>
                 </div>
@@ -280,22 +300,22 @@
         </section>
 
                 <!-- POSSIBILITIES -->
-        <section class="bg-bg-alt  ">
-            <div class="flex flex-row-reverse items-center gap-16 py-20 container">
-                <div class="w-5/6 rounded-4xl overflow-hidden"> 
-                    <img src="./assets/img/Gridimage5.jpg" alt="Image significative" class="object-cover w-full h-full">
+        <section class="py-16 lg:py-24">
+            <div class="wrapper flex flex-col lg:flex-row-reverse items-center gap-12">
+                <div class="w-full lg:w-1/2 rounded-3xl overflow-hidden shadow-card-hover"> 
+                    <img src="./assets/img/Gridimage5.jpg" alt="Image significative" loading="lazy" class="object-cover w-full h-full aspect-[4/3]">
                 </div>
-                <div class="w-7/9 text-text flex flex-col gap-8">
-                    <h1 class="text-3xl font-bold text-text leading-relaxed">Plongez dans l’univers agricole qui vous facilite la vie</span></h1>
-                    <h3 class="text-xl leading-relaxed font-bold">
+                <div class="w-full lg:w-1/2 flex flex-col gap-6">
+                    <h2 class="text-3xl font-bold leading-tight">Plongez dans l’univers agricole qui vous facilite la vie</span></h2>
+                    <h3 class="text-xl font-bold text-primary">
                         Bienvenue dans Farmi ! 
                     </h3>
-                    <p class="text-xl leading-relaxed">
+                    <p class="text-lg leading-relaxed text-text-muted">
                         Simple, rapide et fiable, Farmi est la communauté incontournable des agriculteurs connectés. 
                         Notre raison d’être : vous proposer un écosystème de solutions pour améliorer votre quotidien 
                         et vous permettre de gagner du temps
                     </p>
-                    <p class="text-xl leading-relaxed">
+                    <p class="text-lg leading-relaxed text-text-muted">
                         Nous mettons à votre disposition l’ensemble des données dont vous avez besoin dans votre prise 
                         de décision Météo, actualités agricoles, cotations, gestion de votre collecte et de vos
                         approvisionnements et plein d’autres encore. Avec Farmi tout est dans la poche. 
@@ -306,39 +326,41 @@
         </section>
 
         <!-- PICTURES -->
-        <section class="bg-alt-2">
-            <div class="container">
-                <div class="flex gap-4 py-8 ">
-                    <img src="./assets/img/gridimage1_1.jpg" class="h-64 w-auto">
-                    <img src="./assets/img/Gridimage2.jpg" class="h-64 w-auto">
-                    <img src="./assets/img/Gridimage3_1.jpg" class="h-64 w-auto">
+        <section class="bg-bg-alt-2">
+            <div class="wrapper">
+                <div class="flex flex-wrap gap-4 py-8 ">
+                    <img src="./assets/img/gridimage1_1.jpg" alt="picts of farm activities" loading="lazy" class="h-52 ">
+                    <img src="./assets/img/Gridimage2.jpg" alt="picts of farm activities" loading="lazy" class="h-52 ">
+                    <img src="./assets/img/Gridimage3_1.jpg" alt="picts of farm activities" loading="lazy" class="h-52 ">
                 </div>
             </div>
         </section>
 
         <!-- TESTIMONIALS -->
-         <section>
-            <div class="container">
-                <h1 class="text-text text-3xl font-bold text-center py-24">
+         <section class="bg-bg-alt py-16 lg:py-24">
+            <div class="wrapper">
+                <h2 class="text-3xl font-bold text-center mb-12">
                     Qui de mieux que vous pour parler de nous ?
-                </h1>
-                <div class="grid grid-cols-2 gap-8 mx-8 items-center justify-center">
-                    <div class="testimonial-type">
-                        <div class="testimonial-type-msg">
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="testimonial-card">
+                        <i class="ph ph-quotes text-3xl text-accent"></i>
+                        <div class="text-lg italic leading-relaxed flex-1">
                             "Depuis un an, j'utilise Farmi pour differentes taches, comme la meteo ou encore la vente des
                             cereales. Depuis mon smartphone, je pilote de plus en plus de taches par moi-meme. Un gain de temps
                             qui ameliore aussi marelation avec mon agent relation cultures. "
                         </div> 
-                        <div class="testimonial-type-autor">
+                        <div class="text-xl font-bold">
                             - Julien ,cerealier(76)
                         </div>   
                     </div>
-                    <div class="testimonial-type">
-                        <div class="testimonial-type-msg">
+                    <div class="testimonial-card">
+                        <i class="ph ph-quotes text-3xl text-accent"></i>
+                        <div class="text-lg italic leading-relaxed flex-1">
                             "J'utilise Farmi depuis pres de 2 ans. Cela me permet de consulter les cours en temps reel
                             et de saisir les meilleures opportunites. "
                         </div> 
-                        <div class="testimonial-type-autor">
+                        <div class="text-xl font-bold">
                             - Jean-Jacques ,cerealier(27)
                         </div>   
                     </div>
@@ -347,215 +369,203 @@
          </section>
 
         <section class="my-16">
-            <div class="grid grid-cols-4 p-8 gap-4 container">
-                <img src="./assets/img/Gridimage4.jpg" class="h-80">
-                <img src="./assets/img/Gridimage5.jpg" class="h-80">
-                <img src="./assets/img/Gridimage6.jpg" class="col-span-2 h-80">
+            <div class="grid lg:grid-cols-4 sm:grid-cols-1 p-8 gap-4 wrapper">
+                <img src="./assets/img/Gridimage4.jpg" alt="agri picts" loading="lazy" class="h-64">
+                <img src="./assets/img/Gridimage5.jpg" alt="agri picts" loading="lazy" class="h-64">
+                <img src="./assets/img/Gridimage6.jpg" alt="agri picts" loading="lazy" class="col-span-2 h-64">
             </div>
         </section>
 
         <!-- HURRY UP -->
-        <section class="">
-            <div class="flex items-center gap-20 pt-16 container">
-                <div class="w-5/6 rounded-3xl overflow-hidden"> 
-                    <img src="./assets/img/Newsletter.svg" alt="Newsletter" class="object-cover w-full h-full">
+        <section class="py-16 lg:py-24">
+            <div class="wrapper flex flex-col lg:flex-row items-center gap-12">
+                <div class="w-full lg:w-1/2 rounded-3xl overflow-hidden"> 
+                    <img src="./assets/img/Newsletter.svg" alt="Newsletter" loading="lazy" class="object-cover w-full h-full aspect-[4/3]">
                 </div>
-                <div class="text-text flex flex-col gap-10">
-                    <h1 class="text-4xl font-bold text-text leading-relaxed">N'en perdez pas une miette !</span></h1>
+                <div class="w-full lg:w-1/2 flex flex-col gap-6">
+                    <h2 class="text-3xl font-bold leading-tight">N'en perdez pas une miette !</span></h2>
 
-                    <p class="text-xl leading-relaxed">
+                    <p class="text-lg leading-relaxed text-text-muted">
                         Abonnez-vous à notre newsletter pour rester informé des nouveautés Farmi et des 
                         solutions que nous vous apportons pour votre exploitation.
                     </p>
-                    <button class="btn text-bg w-fit">Rejoindre la communaute Farmi</button>
+                    <button class="btn-primary">Rejoindre la communaute Farmi</button>
                 </div>
             </div>        
         </section>
         
         <!-- ARTICLES -->
-        <section class="bg-primary py-24">
-            <div class="grid grid-cols-3 gap-4 container">
-                <div class="needs-cards bg-alt-2 rounded-4xl w-auto">
-                    <img src="./assets/img/Presse-1-reussir_1.png" alt="Presse reussir" class="w-64">
-                    <h3 class="needs-cards-title text-2xl">Avec Farmi, on ne peut pas se tromper</h3>
-                    <p class="needs-cards-contain text-lg">
+        <section class="py-16 lg:py-2 bg-primary-dark">
+            <div class="wrapper grid lg:grid-cols-3 sm:grid-cols-1 gap-4">
+                <div class="need-card">
+                    <img src="./assets/img/Presse-1-reussir_1.png" alt="Presse reussir" loading="lazy" class="w-64">
+                    <h3 class="text-lg font-bold">Avec Farmi, on ne peut pas se tromper</h3>
+                    <p class="needs-cards-contain text-sm">
                         Céréalier en Seine-et-Marne, Alain de Cuypère utilise l’application Farmi pour la vente 
                         de ses productions, une démarche qui lui offre l’opp...
                     </p>
-                    <button class="btn-second">
-                        Lire l'article <i data-lucide="ArrowRight"></i>
+                    <button class="btn-outline">
+                        Lire l'article <i class="ph ph-arrow-right"></i>
                     </button>
                 </div>
-                <div class="needs-cards bg-alt-2 rounded-4xl w-auto">
-                    <img src="./assets/img/Presse-3-cultivar_1.png" alt="Presse reussir" class="w-64">
-                    <h3 class="needs-cards-title text-2xl">Farmi : la nouvelle appli gratuite de Soufflet pour les agriculteurs</h3>
-                    <p class="needs-cards-contain text-lg">
+                <div class="need-card">
+                    <img src="./assets/img/Presse-3-cultivar_1.png" alt="Presse reussir" loading="lazy" class="w-64">
+                    <h3 class="text-lg font-bold">Farmi : la nouvelle appli gratuite de Soufflet pour les agriculteurs</h3>
+                    <p class="needs-cards-contain text-sm">
                         Météo, marchés, actualités, carte des silos et espace personnel. Voici les cinq fonctionnalités
                         de Farmi, la nouvelle application de Souffle...
                     </p>
-                    <button class="btn-second">
-                        Lire l'article <i data-lucide="ArrowRight"></i>
+                    <button class="btn-outline">
+                        Lire l'article <i class="ph ph-arrow-right"></i>
                     </button>
                 </div>
-                <div class="needs-cards bg-alt-2 rounded-4xl w-auto h-auto">
-                    <img src="./assets/img/Presse-2-Terre_1.png" alt="Presse reussir" class="w-64">
-                    <h3 class="needs-cards-title text-2xl">L'application Farmi s'enrichit de deux nouvelles fonctionnalités</h3>
-                    <p class="needs-cards-contain text-lg">
+                <div class="need-card">
+                    <img src="./assets/img/Presse-2-Terre_1.png" alt="Presse reussir" loading="lazy" class="w-64">
+                    <h3 class="font-bold text-lg">L'application Farmi s'enrichit de deux nouvelles fonctionnalités</h3>
+                    <p class="needs-cards-contain text-sm">
                         Un an après sa dernière évolution majeure avec l'ouverture des offres de contrats sur
                         signature en ligne, l'application de Soufflet Agricult...
                     </p>
-                    <button class="btn-second">
-                        Lire l'article <i data-lucide="ArrowRight"></i>
+                    <button class="btn-outline">
+                        Lire l'article <i class="ph ph-arrow-right"></i>
                     </button>
                 </div>
             </div>
         </section>
 
         <!-- ACTUALITY -->
-        <section class="bg-bg-alt">
-            <div class="container">
-                <h2 class="text-4xl font-bold text-text leading-relaxed py-8">Toute l'actualite agricole</h2>
-                <p class="text-xl leading-relaxed text-text">Retrouvez toute l'actualité agricole, les tendances du secteur et les dernières innovations 
+        <section class="py-16 lg:py-2">
+            <div class="wrapper">
+                <h2 class="text-3xl font-bold pt-16 pb-4 text-center mb-4">Toute l'actualite agricole</h2>
+                <p class="text-lg text-text-muted lg:mx-64 mb-8 py-8 max-w-2xl text-center lg:text-wrap">Retrouvez toute l'actualité agricole, les tendances du secteur et les dernières innovations 
                    pour rester informé et à la pointe des évolutions du marché.</p>
-                <div class="flex gap-8 py-8">
-                    <div class="cat-widget">Nos engagements</div>
-                    <div class="cat-widget">Conservation des fourrages</div>
-                    <div class="cat-widget">Semences</div>
+                <div class="flex flex-wrap gap-4 mb-10">
+                    <div class="category-pill">Nos engagements</div>
+                    <div class="category-pill">Conservation des fourrages</div>
+                    <div class="category-pill">Semences</div>
                 </div>
-                <div class="grid grid-cols-4 gap-6">
-                    <div class="actuality-card">
-                        <img src="./assets/img/colzamax_v2.jpg" alt="Colzamax" class="actuality-pict">
-                        <div class="actuality-cat">Semences</div>
-                        <div class="actuality-title">COLZAMAX 27: 4 solutions</div>
-                        <div class="actuality-body">Implantation,pression altises, gestion des melygethes, robustesse...</div>
-                        <div class="actuality-footer">
-                            <p class="actuality-date">28 mai 2026</p>
-                            <i data-lucide="ArrowRight" class="actuality-btn"></i>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="article-card">
+                        <img src="./assets/img/colzamax_v2.jpg" alt="Colzamax" loading="lazy" class="h-48 w-full object-cover">
+                        <div class="uppercase text-primary text-sm font-bold px-3">Semences</div>
+                        <div class="font-bold text-lg px-3">COLZAMAX 27: 4 solutions</div>
+                        <div class="text-sm text-text-muted flex-1 px-3">Implantation,pression altises, gestion des melygethes, robustesse...</div>
+                        <div class="flex items-center justify-between pt-3 border-t border-bg-alt-2 text-sm">
+                            <p class="p-5 flex flex-col gap-2 flex-1">28 mai 2026</p>
+                            <i class="ph ph-arrow-right text-primary"></i>
                         </div>
                     </div>
-                    <div class="actuality-card">
-                        <img src="./assets/img/Capture_dâ__eÌ_cran_2026-01-29_aÌ__14.07.32.jpg" alt="Agronomie" class="actuality-pict">
-                        <div class="actuality-cat">Agronomie</div>
-                        <div class="actuality-title">Etats d'orges suite a la vague</div>
-                        <div class="actuality-body">Les OPA dessaisonnalises ont localement accusees le coup des gelees des 31/12 et ...</div>
-                        <div class="actuality-footer">
-                            <p class="actuality-date">29 Janv. 2026</p>
-                            <i data-lucide="ArrowRight" class="actuality-btn"></i>
+                    <div class="article-card">
+                        <img src="./assets/img/Capture_dâ__eÌ_cran_2026-01-29_aÌ__14.07.32.jpg" loading="lazy" alt="Agronomie" class="h-48 w-full object-cover">
+                        <div class="uppercase text-primary text-sm font-bold px-3">Agronomie</div>
+                        <div class="font-bold text-lg px-3">Etats d'orges suite a la vague</div>
+                        <div class="text-sm text-text-muted flex-1 px-3">Les OPA dessaisonnalises ont localement accusees le coup des gelees des 31/12 et ...</div>
+                        <div class="flex items-center justify-between pt-3 px-4 border-t border-bg-alt-2 text-sm">
+                            <p class="p-5 flex flex-col gap-2 flex-1">29 Janv. 2026</p>
+                            <i class="ph ph-arrow-right text-primary"></i>
                         </div>
                     </div>
-                    <div class="actuality-card">
-                        <img src="/assets/img/tournesol-12.jpg" alt="" class="actuality-pict">
-                        <div class="actuality-cat">Semences</div>
-                        <div class="actuality-title">Bien choisir sa variete de tournesol</div>
-                        <div class="actuality-body">Dans cette edition, nous vous proposons un tour d'horizon des Le premier  choix...</div>
-                        <div class="actuality-footer">
-                            <p class="actuality-date">15 Janv. 2026</p>
-                            <i data-lucide="ArrowRight" class="actuality-btn"></i>
+                    <div class="article-card">
+                        <img src="/assets/img/tournesol-12.jpg" alt="tournesol" loading="lazy" class="h-48 w-full object-cover">
+                        <div class="uppercase text-primary text-sm font-bold px-3">Semences</div>
+                        <div class="tfont-bold text-lg px-3">Bien choisir sa variete de tournesol</div>
+                        <div class="text-sm text-text-muted flex-1 px-3">Dans cette edition, nous vous proposons un tour d'horizon des Le premier  choix...</div>
+                        <div class="flex items-center justify-between pt-3 border-t border-bg-alt-2 text-sm">
+                            <span class="p-5 flex flex-col gap-2 flex-1">15 Janv. 2026</span>
+                            <i class="ph ph-arrow-right text-primary"></i>
                         </div>
                     </div>
-                    <div class="actuality-card">
-                        <img src="/assets/img/o_Sting_1.jpg" alt="" class="actuality-pict">
-                        <div class="actuality-cat">Agronomie</div>
-                        <div class="actuality-title">Le paysage varietal en Orge ...</div>
-                        <div class="actuality-body">18 varietes sous numero sont venus challenger RGT-Planet, variete preferee...</div>
-                        <div class="actuality-footer">
-                            <p class="actuality-date">9 Janv. 2026</p>
-                            <i data-lucide="ArrowRight" class="actuality-btn"></i>
+                    <div class="article-card">
+                        <img src="/assets/img/o_Sting_1.jpg" alt="Orge"  loading="lazy" class="h-48 w-full object-cover">
+                        <span class="uppercase text-primary px-3 text-sm font-bold">Agronomie</span>
+                        <h3 class="font-bold text-lg px-3">Le paysage varietal en Orge ...</h3>
+                        <p class="text-sm text-text-muted flex-1 px-3">18 varietes sous numero sont venus challenger RGT-Planet, variete preferee...</p>
+                        <div class="flex items-center justify-between pt-3 border-t border-bg-alt-2 text-sm">
+                            <p class="p-5 flex flex-col gap-2 flex-1">9 Janv. 2026</p>
+                            <i class="ph ph-arrow-right text-primary"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- QUALITIES -->
-        <section class="p-20 bg-bg-alt">
-            <div class="grid grid-cols-4 gap-8 justify-center container">
-                <div class="text-xl text-center text-text flex flex-col items-center gap-8">
-                    <i data-lucide="CalendarClock" class="w-12 h-12 text-center"></i>
-                    Disponibilité et simplicité de la plateforme d’achat
+        <section class="bg-bg-alt py-16 lg:py-20">
+            <div class="wrapper grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div class="flex flex-col items-center text-center gap-4">
+                    <i class="ph ph-calendar-check text-4xl text-primary"></i>
+                    <p class="text-lg">Disponibilité et simplicité de la plateforme d'achat</p>
                 </div>
-                <div class="text-xl text-center text-text flex flex-col items-center gap-8">
-                    <i data-lucide="Sprout" class="w-12 h-12 text-center"></i>
-                    Gamme complète pour répondreà vos besoins
+                <div class="flex flex-col items-center text-center gap-4">
+                    <i class="ph ph-plant text-4xl text-primary"></i>
+                    <p class="text-lg">Gamme complète pour répondre à vos besoins</p>
                 </div>
-                <div class="text-xl text-center text-text flex flex-col items-center gap-8">
-                    <i data-lucide="UserCog" class="w-12 h-12 text-center"></i>
-                    Des experts à l’écoute pour étudier vos problématiques
+                    <div class="flex flex-col items-center text-center gap-4">
+                    <i class="ph ph-user-gear text-4xl text-primary"></i>
+                    <p class="text-lg">Des experts à l'écoute pour étudier vos problématiques</p>
                 </div>
-                <div class="text-xl text-center text-text flex flex-col items-center gap-8">
-                    <i data-lucide="Timer" class="w-12 h-12 text-center"></i>
-                    Gain de temps dans vos réapprovisionnements
-                </div> 
+                <div class="flex flex-col items-center text-center gap-4">
+                    <i class="ph ph-timer text-4xl text-primary"></i>
+                    <p class="text-lg">Gain de temps dans vos réapprovisionnements</p>
+                </div>
             </div>
         </section>
-    </main>
-    <footer class="bg-primary">
-        <div class="flex py-16 gap-16 justify-center container">
-            <div class="flex flex-col gap-4">
-                <img src="./assets/img/logo.svg" class="w-48 h-32">
-                <div class="flex gap-2">
-                    <div class="step-type bg-alt-2 text-text text-md">
-                        F
-                    </div>
-                    <div class="step-type bg-alt-2 text-text">
-                        W
-                    </div>
-                    <div class="step-type bg-alt-2 text-text">
-                        Y
-                    </div>
-                    <div class="step-type bg-alt-2 text-text">
-                        T
-                    </div>
-                </div>
-                <div class="flex gap-4 text-white">
-                    <button class="flex flex-row w-48 items-center  bg-black border border-bg rounded-sm">
-                        <i data-lucide="Play" class="w-12 h-12"></i> 
-                        <p class="text-sm">DISPONIBLE SUR <span class="text-xl font-semibold">Google Play</span>
-                        </p>
-                    </button>
-                    <button class="flex flex-row w-48 items-center  bg-black border border-bg rounded-sm text-sm">
-                        <i data-lucide="Apple" class="w-12 h-12"></i> 
-                        <p>Telecharger dans <span class="text-xl font-semibold">l'App Store</span>
-                        </p>
-                    </button>
-                </div>
-                <div class="text-white text-md">
-                    <p>© farmi 2026</p>
-                    <p>Tous droits réservés</p>
-                </div>
 
+    </main>
+    <footer class="bg-primary text-white">
+        <div class="wrapper grid grid-cols-1 lg:grid-cols-4 gap-12 py-16">
+    
+        <div class="flex flex-col gap-4">
+            <span class="text-2xl font-bold">AgriFlow</span>
+            <div class="flex gap-3">
+            <a href="#" aria-label="Facebook" class="step-badge bg-white/15 hover:bg-white/25 transition-colors"><i class="ph ph-facebook-logo"></i></a>
+            <a href="#" aria-label="Twitter" class="step-badge bg-white/15 hover:bg-white/25 transition-colors"><i class="ph ph-x-logo"></i></a>
+            <a href="#" aria-label="Youtube" class="step-badge bg-white/15 hover:bg-white/25 transition-colors"><i class="ph ph-youtube-logo"></i></a>
+            <a href="#" aria-label="Instagram" class="step-badge bg-white/15 hover:bg-white/25 transition-colors"><i class="ph ph-instagram-logo"></i></a>
             </div>
-            <div class="text-white text-xl">
-                <h1 class="text-xl font-bold uppercase">Mieux nous connaître</h1>
-                <ul class="py-4">
-                    <li class="py-2">A propos de Farmi</li>
-                    <li class="py-2">Actualites agricoles</li>
-                </ul>
-            </div>
-            <div class="text-white text-xl">
-                <h1 class="text-xl font-bold uppercase">Nos services</h1>
-                <ul class="py-4">
-                    <li class="py-2">Foire aux questions</li>
-                    <li class="py-2">Blog Farmi</li>
-                    <li class="py-2">Acces espace client</li>
-                </ul>
-            </div>
-            <div class="text-white text-xl">
-                <h1 class="text-xl font-bold uppercase">Besoin d'une information ?</h1>
-                <ul class="py-4">
-                    <li class="py-2">Ecophyto</li>
-                    <li class="py-2">Nous contacter</li>
-                </ul>
-            </div>
+            <p class="text-sm text-white/70">© AgriFlow 2026 — Tous droits réservés</p>
+        </div>
+    
+        <nav aria-label="À propos">
+            <h2 class="text-lg font-bold uppercase mb-4">Mieux nous connaître</h2>
+            <ul class="flex flex-col gap-2 text-white/80">
+            <li><a href="#" class="hover:text-accent transition-colors">À propos d'AgriFlow</a></li>
+            <li><a href="#" class="hover:text-accent transition-colors">Actualités agricoles</a></li>
+            </ul>
+        </nav>
+    
+        <nav aria-label="Services">
+            <h2 class="text-lg font-bold uppercase mb-4">Nos services</h2>
+            <ul class="flex flex-col gap-2 text-white/80">
+            <li><a href="#" class="hover:text-accent transition-colors">Foire aux questions</a></li>
+            <li><a href="#" class="hover:text-accent transition-colors">Blog AgriFlow</a></li>
+            <li><a href="#" class="hover:text-accent transition-colors">Accès espace client</a></li>
+            </ul>
+        </nav>
+    
+        <nav aria-label="Contact">
+            <h2 class="text-lg font-bold uppercase mb-4">Besoin d'une information ?</h2>
+            <ul class="flex flex-col gap-2 text-white/80">
+            <li><a href="#" class="hover:text-accent transition-colors">Ecophyto</a></li>
+            <li><a href="#" class="hover:text-accent transition-colors">Nous contacter</a></li>
+            </ul>
+        </nav>
+    
         </div>
     </footer>
+
     <div class="bg-cyan-950">
-        <div class=" text-white text-xl flex items-center gap-4 p-2 container">
-            Un service propose par :<img src="./assets/img/soufflet-white-transparent.png" alt="Soufflet" class="h-12">
+        <div class=" text-white text-xl flex items-center gap-4 p-2 wrapper">
+            Un service propose par :<img src="./assets/img/soufflet-white-transparent.png" loading="lazy" alt="Soufflet" class="h-12">
         </div>
     </div>
 
     <script>
-        lucide.createIcons();
+        const toggle = document.getElementById('nav-toggle');
+        const nav = document.getElementById('mobile-nav');
+        toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('hidden');
+        toggle.setAttribute('aria-expanded', String(!isOpen));
+        });
     </script>
 
 </body>
